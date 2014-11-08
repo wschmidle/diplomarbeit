@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include <conio.h>
 #include <math.h>
 #include <stdlib.h>
 
-const Max = 220,                                 // Maximale Groesse der Matrizen
+const int Max = 220,                             // Maximale Groesse der Matrizen
                                                  // (reicht fuer 3 <= h <= 4)
 
 // *********************************************************************************
@@ -13,7 +12,7 @@ const Max = 220,                                 // Maximale Groesse der Matrize
       Anz_Zeilen [MatrAnzahl] = {5,20},
       Anz_Spalten[MatrAnzahl] = {20,16};
 
-char huge D [MatrAnzahl][Max][Max] = {
+char D [MatrAnzahl][Max][Max] = {
 
 {
 {1,0,0,0,-1,0,0,0,0,1,0,0,-1,0,0,0,0,0,0,0},     // Matrix 2 -> 1
@@ -46,13 +45,13 @@ char huge D [MatrAnzahl][Max][Max] = {
 
 // *********************************************************************************
 
-const Verschiebung = Dim_der_Komponente - MatrAnzahl + 1;
+const int Verschiebung = Dim_der_Komponente - MatrAnzahl + 1;
 
 int   n, m, dim, torsion = 0;
 
-typedef char huge Matrix[Max][Max];
+typedef char Matrix[Max][Max];
 
-                  Matrix E1, F;
+             Matrix E1, F;
 
 int sgn(int z)
 {
@@ -275,11 +274,10 @@ void initialisiere(Matrix M, int groesse)        // M := Einheitsmatrix
    for (i=0; i<groesse; i++)    M[i][i] = 1;
 }
 
-void main (void)
+int main (void)
 {
    int i,j;
 
-   clrscr();
    for (dim=MatrAnzahl-1; dim>=0; dim--)
    {
       n = Anz_Zeilen [dim];
@@ -293,5 +291,4 @@ void main (void)
       Diagonale();
       Homologie();
    }
-   getch();
 }

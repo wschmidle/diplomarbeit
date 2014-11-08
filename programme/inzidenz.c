@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include <conio.h>
 #include <math.h>
 #include <stdlib.h>
 
-const Max_Zellen = 500,                          // max. Zellenanzahl pro Dimension
+const int Max_Zellen = 500,                          // max. Zellenanzahl pro Dimension
                                                  // (reicht fuer h<=4)
 
 // ********************************************************************************
@@ -20,9 +19,9 @@ typedef int        Nummern [Dimension+1];
 typedef char Schichten     [h+1],
              Permutationen      [2*h+1],
              SchichtenPerm [h+1][2*h+1],
-              huge Tabelle [Dimension+1][Max_Zellen][h+1][2*h+1],
+                   Tabelle [Dimension+1][Max_Zellen][h+1][2*h+1],
                    Angaben [Dimension+1][Max_Zellen],
-              huge Matrix  [Max_Zellen][Max_Zellen];
+                   Matrix  [Max_Zellen][Max_Zellen];
 
         int      dim, n, m, komponente;          // m = Schlitzhaufen, n = Schichten
    long int      insgesamt;                      // Gesamtzahl aller Fixpunkt-Zellen
@@ -445,11 +444,10 @@ void Liste_ausgeben(void)                        // gibt alle Fixpunkt-Zellen na
    }
 }
 
-void main (void)
+int main (void)
 {
    int i;
 
-   clrscr();
    printf("h = %d, c = %d\n\n", h, c);
    Init();
    for (n=2; n <= 2*h; n++)                      // erzeuge alle Fixpunkte
@@ -466,5 +464,4 @@ void main (void)
       for (dim=2; dim <= Dimension; dim++)  Delta(i);
       printf("};\n");
    }
-   getch();
 }
