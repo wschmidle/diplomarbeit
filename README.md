@@ -1,6 +1,11 @@
 Diplomarbeit
 ============
 
+Die Diplomarbeit heißt "Über eine Involution auf Modulräumen berandeter Riemannscher Flächen" und ist von 1998. Betreut wurde sie von Prof. Dr. Carl-Friedrich Bödigheimer an der Universität Bonn.
+
+## der Text
+
+Die Abbildungen sind im LaTeX-Text nicht enthalten. Wir haben die Abbildungen damals per Hand erstellt und dann in den gesetzten Text hineinkopiert.
 
 ## die Programme
 
